@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign in | Neon Auth Example</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <div class="flex self-stretch justify-center items-center min-h-screen">
+      <div
+        class="flex flex-col items-stretch"
+        style="max-width: 380px; flex-basis: 380px; padding: 1rem"
+      >
+        <div class="text-center mb-6">
+          <h2 class="text-2xl font-semibold text-white">
+            Sign in to your account
+          </h2>
+          <p class="text-md text-white">
+            Don't have an account?
+            <a class="underline font-medium" href="/src/oauth/signup"
+              >Sign up</a
+            >
+          </p>
+        </div>
+        <div class="gap-4 flex flex-col items-stretch">
+          <div class="gap-4 flex flex-col items-stretch">
+            <button
+              id="githubSignin"
+              class="cursor-pointer inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-black border-1 border-neutral-800 text-white hover:bg-neutral-800 h-9 px-4 py-2"
+            >
+              <div class="flex items-center w-full gap-4">
+                <img
+                  src="/github.svg"
+                  alt="GitHub logo"
+                  width="22"
+                  height="22"
+                /><span class="flex-1">Sign in with GitHub</span>
+              </div>
+            </button>
+            <button
+              id="googleSignin"
+              class="cursor-pointer inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-white text-black border-1 border-neutral-300 hover:bg-white/90 h-9 px-4 py-2"
+            >
+              <div class="flex items-center w-full gap-4">
+                <img
+                  src="/google.svg"
+                  alt="Google logo"
+                  width="22"
+                  height="22"
+                /><span class="flex-1">Sign in with Google</span>
+              </div>
+            </button>
+          </div>
+        </div>
+        <div class="flex items-center justify-center my-6">
+          <div class="flex-1 border-b-1 border-neutral-800">
+            <div
+              data-orientation="horizontal"
+              role="none"
+              class="shrink-0 bg-border h-[1px] w-full"
+            ></div>
+          </div>
+          <div class="mx-2 text-sm text-zinc-500">Or continue with</div>
+          <div class="flex-1 border-b-1 border-neutral-800">
+            <div
+              data-orientation="horizontal"
+              role="none"
+              class="shrink-0 bg-border h-[1px] w-full"
+            ></div>
+          </div>
+        </div>
+        <form class="flex flex-col items-stretch" novalidate="">
+          <label
+            class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-gray-400 mb-1"
+            for="email"
+            >Email</label
+          ><input
+            class="flex h-9 w-full rounded-md border border-input border-neutral-800 bg-transparent px-3 py-1 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
+            id="email"
+            type="email"
+            name="email"
+          />
+
+          <label
+            class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-gray-400 mt-4 mb-1"
+            for="password"
+            >Password</label
+          >
+
+          <input
+            class="flex h-9 w-full rounded-md border border-input border-neutral-800 bg-transparent px-3 py-1 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 hide-password-toggle pr-10"
+            id="password"
+            autocomplete="current-password"
+            type="password"
+            name="password"
+          />
+
+          <button
+            id="signin"
+            class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-white text-black hover:bg-white/90 h-9 px-4 py-2 mt-6"
+            type="button"
+          >
+            Sign In
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <script type="module" src="./scripts/signin.ts"></script>
+  </body>
+</html>
